@@ -9,10 +9,10 @@ body {
 }
 
 h1 {
-    font-family: 'Georgia', serif; /* Font for the heading */
+    font-family: 'Georgia', serif;
 }
 
-ul.navbar{
+.navbar{
     position: static;
     top: 5em;
     left: 2em;
@@ -21,29 +21,45 @@ ul.navbar{
     list-style-type: none;
     margin: 0 auto;
     text-align: center;
-}
 
-ul.navbar li a {
-	text-align: center;
-    color: white; 
-    padding: 7em; 
+}
+.navbar li {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 100px;
+    text-decoration: none;
+    position: re;
     display: inline;
+}
+
+.navbar li a { 
+    text-align: center;
+    color: white; 
+    padding: 7px; 
 	margin-right: 10px;
-	text-decoration: none;
+	text-decoration: none; 
+}
+.navbar li a:hover { color: #4992f0; }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-ul.navbar li {
-	display: block;
-	color: black;
-	text-align: center;
-	padding: 10px;
-	text-decoration: none;
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 60em;
+  box-shadow: 0em 1em 2em 0em rgba(0,0,0,0.2);
+  padding: 3em;
+  z-index: 1;
 }
 
-ul.navbar li a:hover {
-    color: #4992f0;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
-
 
 
 @media all {
