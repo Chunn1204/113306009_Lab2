@@ -15,20 +15,20 @@ h1 {
     top: 5em;
     left: 2em;
     width: 100%;
-    background-color: #213c6f;
+    background-color: #ff48ac;
     list-style-type: none;
     margin: 0 auto;
     text-align: center;
 
 }
 .navbar li {
-    display: block;
+    display: inline-block;
     color: black;
     text-align: center;
     padding: 10px 100px 10px;
     text-decoration: none;
     position: relative;
-    display: inline;
+    
 }
 .navbar li a { 
     text-align: center;
@@ -38,46 +38,67 @@ h1 {
 	text-decoration: none; 
 }
 .navbar li a:hover { 
-    color: #4992f0; 
+    color: #fff700  ; 
 }
 
-/* 這部分是關於下拉選單的樣式 */
 .dropdown {
-    left: 30px;
-    display: inline-block;
+    position: relative;
 }
 
 .dropdown-content {
     display: none;
-    position: relative;
-    height: 50px;
-    width: 50px;
-    background-color: yellow;
-    
+    position: absolute;
+    background-color: #ff48ac;
+    min-width: 160px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 8px;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+.dropdown-content li {
     display: block;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+    border-radius: 5px;
 }
 
-/* 當滑鼠懸停在下拉項目上時，顯示下拉內容 */
+.dropdown-content li a:hover {
+    background-color: #ff48ac;
+    color: #fff700;
+}
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #ddd;
+.dropdown > a::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff700;
+    position: absolute;
+    right: 90px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
+.dropdown:hover > a::after {
+    opacity: 1;
+}
 
 @media all {
     body {
